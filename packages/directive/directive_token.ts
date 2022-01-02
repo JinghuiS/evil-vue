@@ -1,4 +1,4 @@
 import { InjectionToken } from 'injection-js'
-import { DirectiveClass } from './types'
+import { DirectiveImplements } from './types'
 
-export const DIRECTIVE = new InjectionToken<DirectiveClass>('DIRECTIVE')
+export const DIRECTIVE = new InjectionToken<DirectiveImplements>('DIRECTIVE')

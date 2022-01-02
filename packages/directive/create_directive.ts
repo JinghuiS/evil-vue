@@ -2,7 +2,7 @@ import { forwardRef, Inject, Injectable, Optional } from 'injection-js'
 
 import { VUE_APP, VUE_APP_TYPE } from 'packages'
 import { isArray } from 'packages/utils/is'
-import { DirectiveClass } from './types'
+import { DirectiveImplements } from './types'
 import { DIRECTIVE } from './directive_token'
 
 @Injectable()
@@ -12,7 +12,7 @@ export class StartupDirective {
     private vue: VUE_APP_TYPE,
     @Optional()
     @Inject(DIRECTIVE)
-    directive?: DirectiveClass[] | DirectiveClass
+    directive?: DirectiveImplements[] | DirectiveImplements
   ) {
     if (directive) {
       if (isArray(directive)) {

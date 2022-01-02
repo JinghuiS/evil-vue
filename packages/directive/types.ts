@@ -1,47 +1,47 @@
 import { DirectiveBinding, VNode } from 'vue'
 
-export interface DirectiveClass {
+export interface DirectiveImplements {
   name: string
-  created(
+  created?: (
     el: any,
     binding: DirectiveBinding<any>,
     vnode: VNode<any, any, { [p: string]: any }>,
     prevVnode: any
-  ): any
-  beforeMount(
+  ) => any
+  beforeMount?: (
     el: any,
     binding: DirectiveBinding<any>,
     vnode: VNode<any, any, { [p: string]: any }>,
     prevVnode: any
-  ): any
-  mounted(
+  ) => any
+  mounted?: (
     el: any,
     binding: DirectiveBinding<any>,
     vnode: VNode<any, any, { [p: string]: any }>,
     prevVnode: any
-  ): any
-  beforeUpdate(
+  ) => any
+  beforeUpdate?: (
     el: any,
     binding: DirectiveBinding<any>,
     vnode: VNode<any, any, { [p: string]: any }>,
     prevVnode: any
-  ): any
-  updated(
+  ) => any
+  updated?: (
     el: any,
     binding: DirectiveBinding<any>,
     vnode: VNode<any, any, { [p: string]: any }>,
     prevVnode: any
-  ): any
-  beforeUnmount(
+  ) => any
+  beforeUnmount?: (
     el: any,
     binding: DirectiveBinding<any>,
     VNode: VNode<any, any, { [p: string]: any }>,
     prevVnode: any
-  ): any
-  unmounted(
+  ) => any
+  unmounted?: (
     el: any,
     binding: DirectiveBinding<any>,
     vnode: VNode<any, any, { [p: string]: any }>,
     prevVnode: any
-  ): any
+  ) => any
 }
