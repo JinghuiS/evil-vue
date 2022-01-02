@@ -44,8 +44,10 @@ export class VueModuleScanner {
       if (item.providers) {
         this.providers = [...this.providers, ...item.providers]
       }
-      const itemModule = this.scanModule(item)
-      moduleProviders.concat(itemModule.providers)
+      if (!item.vueModule && !item.providers) {
+        const itemModule = this.scanModule(item)
+        moduleProviders.concat(itemModule.providers)
+      }
     })
 
     this.providers = this.providers.concat(moduleProviders)
