@@ -1,0 +1,5 @@
+export { VueFactory } from './factory'
+export { bootstrapModule } from './bootstrap_module'
+export * from './types'
+export * from './module_token'
+export * from './vue_module'
