@@ -4,15 +4,15 @@ import { DirectiveImplements } from 'packages'
 
 @Injectable()
 export class TestDirective implements DirectiveImplements {
-  /** 指令名称*/
-  name: string = 'test'
+    /** 指令名称*/
+    name: string = 'test'
 
-  mounted(
-    el: any,
-    binding: DirectiveBinding<any>,
-    vnode: VNode<any, any, { [p: string]: any }>,
-    prevVnode: any
-  ): any {
-    console.log('v-test mounted', el)
-  }
+    mounted(
+        el: any,
+        binding: DirectiveBinding<any>,
+        vnode: VNode<any, any, { [p: string]: any }>,
+        prevVnode: any
+    ): any {
+        console.log('v-test mounted', el)
+    }
 }
