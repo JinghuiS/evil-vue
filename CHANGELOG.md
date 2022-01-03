@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/JinghuiS/evil-vue/compare/v1.0.0...v1.0.1) (2022-01-03)
+
+
+### Bug Fixes
+
+* **module:** change scanning import ([efaeec0](https://github.com/JinghuiS/evil-vue/commit/efaeec0a1de7eb47c8c55278481d86eb0383c963))
+
 # 1.0.0 (2022-01-02)
 
 
