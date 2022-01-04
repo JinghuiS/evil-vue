@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/JinghuiS/evil-vue/compare/v1.0.1...v1.1.0) (2022-01-04)
+
+
+### Bug Fixes
+
+* **router:** fix building errors,can use bootstarp as the parent component ([bd7c9da](https://github.com/JinghuiS/evil-vue/commit/bd7c9da6e961655aedb110664548c0779da8d649))
+
+
+### Features
+
+* **router:** add router, roughly complete the function ([7e8920f](https://github.com/JinghuiS/evil-vue/commit/7e8920f5341495bfd20ea0a78f1387ecbb5d7ddd))
+
 ## [1.0.1](https://github.com/JinghuiS/evil-vue/compare/v1.0.0...v1.0.1) (2022-01-03)
 
 
