@@ -24,7 +24,9 @@ export class VueModuleScanner {
     }
 
     scanBootstrap(module: any): any {
-        return Reflect.getOwnMetadata(ModuleBootstrapMetadataKey, module)
+        return (
+            Reflect.getOwnMetadata(ModuleBootstrapMetadataKey, module) || null
+        )
     }
 
     scanProviders(module: any) {
@@ -47,6 +49,7 @@ export class VueModuleScanner {
             if (!item.vueModule && !item.providers) {
                 const itemModule = this.scanModule(item)
                 moduleProviders.concat(itemModule.providers)
+                moduleProviders.push(item)
             }
         })
 

@@ -22,7 +22,7 @@ export default class AppView extends VueComponent {
     <img alt="Vue logo" src="@/assets/logo.png" />
     <div v-test @click="a++">{{ a }}</div>
     <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
-    <!-- <router-view /> -->
+    <router-view />
 </template>
 
 <style>
