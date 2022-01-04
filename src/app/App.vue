@@ -1,11 +1,14 @@
 <script lang="ts">
-import { Component, Viewer, VueComponent } from 'packages'
+import { Component, Viewer, VueComponent, Inject } from 'packages'
 import HelloWorld from './components/HelloWorld.vue'
+import { TestService } from './core/service/test.service'
 import { watch } from 'vue'
+
 @Component({ components: { HelloWorld } })
 export default class AppView extends VueComponent {
-    constructor() {
+    constructor(@Inject(TestService) public testService: TestService) {
         super()
+        testService.test = 2
         watch(
             () => this.a,
             (a) => {

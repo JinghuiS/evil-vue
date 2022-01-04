@@ -1,25 +1,20 @@
 import { RouteRecordRaw } from 'vue-router'
 import { RouterChildKey } from './router_config'
 import { VueEvilRouterRaw } from './types'
-import VueEvilRouterEmptyComponent from './components/empty.vue'
+// import VueEvilRouterEmptyComponent from './components/empty.vue'
 import { VueModuleScanner } from 'packages/module/scanner'
+import { RouterView } from 'vue-router'
+
 import { bootstrapModule, InjectorKey } from 'packages'
-import { inject, provide } from 'vue'
+import { defineComponent, inject, provide } from 'vue'
 import { Injectable } from 'injection-js'
+import ModuleEmptyComponent from './components/empty'
 
 function bindModule(module: any, component?: any) {
     const moduleScanner = new VueModuleScanner()
     const moduleConfig = moduleScanner.scanModule(module)
-    let emptyComponent =
-        moduleScanner.scanBootstrap(module) || VueEvilRouterEmptyComponent
+    let emptyComponent = ModuleEmptyComponent(moduleConfig)
 
-    emptyComponent.resolveComponent = (t: any) => {
-        const parent = inject<any>(InjectorKey, null)
-        moduleConfig.providers.push(t)
-        const injector = bootstrapModule(moduleConfig, parent)
-        provide(InjectorKey, injector)
-        return injector.get(t)
-    }
     return { component: Injectable()(emptyComponent) }
 }
 
@@ -28,10 +23,13 @@ function scannerRouterChildren(module: any) {
     const moduleConfig = moduleScanner.scanModule(module)
     let routerChild: VueEvilRouterRaw[] = []
     moduleConfig.providers.map((item) => {
-        routerChild = Reflect.getOwnMetadata(
+        const child = Reflect.getOwnMetadata(
             RouterChildKey,
             item
         ) as VueEvilRouterRaw[]
+        if (child) {
+            routerChild = child
+        }
     })
     return routerChild
 }

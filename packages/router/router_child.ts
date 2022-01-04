@@ -7,8 +7,6 @@ function RouterChildDecorator(routes: VueEvilRouterRaw[]): ClassDecorator {
     }
 }
 
-class RouterChildClass {}
-
 export function RouterChild(routes: VueEvilRouterRaw[]) {
-    return RouterChildDecorator(routes)(RouterChildClass)
+    return RouterChildDecorator(routes)(class ChildClass {})
 }

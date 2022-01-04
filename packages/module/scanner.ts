@@ -19,7 +19,8 @@ export class VueModuleScanner {
         return {
             providers: this.providers,
             declarations: this.declarations,
-            startupModules: this.startupModules
+            startupModules: this.startupModules,
+            bootstrap: this.scanBootstrap(module)
         }
     }
 
