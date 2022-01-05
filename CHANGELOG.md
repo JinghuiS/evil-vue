@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/JinghuiS/evil-vue/compare/v1.1.1...v1.1.2) (2022-01-05)
+
+
+### Bug Fixes
+
+* **router:** fixed invalid router  guard ([115d660](https://github.com/JinghuiS/evil-vue/commit/115d660ffdf9f9107f0e102a664ee38ba9282026))
+
 ## [1.1.1](https://github.com/JinghuiS/evil-vue/compare/v1.1.0...v1.1.1) (2022-01-05)
 
 
