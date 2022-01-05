@@ -1,6 +1,6 @@
 import { TestService } from '@/app/core/service/test.service'
-import { VueModule } from 'packages/module'
-import { VueEvilRouterModule } from 'packages/router'
+import { VueModule } from 'packages'
+import { VueEvilRouterModule } from 'packages'
 import TestBase from './test-base.vue'
 @VueModule({
     imports: [

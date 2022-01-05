@@ -1,5 +1,5 @@
 import { VueModule } from 'packages/module'
-import { VueEvilRouterModule } from 'packages/router'
+import { VueEvilRouterModule } from 'packages'
 import { createWebHashHistory } from 'vue-router'
 import { TestViewModule } from './pages/test-module/test.module'
 
