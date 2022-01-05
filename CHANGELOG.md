@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/JinghuiS/evil-vue/compare/v1.1.0...v1.1.1) (2022-01-05)
+
+
+### Bug Fixes
+
+* **router:** export the router ([e8d5513](https://github.com/JinghuiS/evil-vue/commit/e8d55130268c5a9b64ff8041e042a8eb87a9cf28))
+
 # [1.1.0](https://github.com/JinghuiS/evil-vue/compare/v1.0.1...v1.1.0) (2022-01-04)
 
 
