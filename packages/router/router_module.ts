@@ -1,5 +1,5 @@
 import { ModuleWithProviders } from 'packages'
-import { VueRouter } from './create_router'
+import { EvilVueRouter } from './create_router'
 import { RouterChild } from './router_child'
 import type {
     VueEvilRouterChildOptions,
@@ -23,7 +23,7 @@ export class VueEvilRouterModule {
                 RouterService,
                 RouteService
             ],
-            vueModule: VueRouter
+            vueModule: EvilVueRouter
         }
     }
     static forChild({ routes }: VueEvilRouterChildOptions) {

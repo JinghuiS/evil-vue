@@ -8,13 +8,11 @@ import { scannerRoutes } from './load_children'
 import { CreateRouterGuard } from './router_guard'
 
 @Injectable()
-export class VueRouter {
+export class EvilVueRouter {
     constructor(
-        @Inject(CreateRouterGuard) private CreateRouterGuard: CreateRouterGuard,
-        @Optional()
+        private CreateRouterGuard: CreateRouterGuard,
         @Inject(forwardRef(() => VUE_APP))
         private vue: VUE_APP_TYPE,
-        @Optional()
         @Inject(ROUTER_CONFIG)
         private routerConfig?: RouterConfig
     ) {

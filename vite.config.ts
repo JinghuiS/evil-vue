@@ -4,7 +4,7 @@ import vueTsx from 'vite-plugin-ts'
 import { fileURLToPath } from 'url'
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => ({
-    plugins: command === 'build' ? [] : [vue(), vueTsx()],
+    plugins: command === 'build' ? [vueTsx()] : [vue(), vueTsx()],
     resolve: {
         alias: {
             '@': fileURLToPath(new URL('./src', import.meta.url)),
@@ -20,7 +20,7 @@ export default defineConfig(({ command }) => ({
             formats: ['es', 'cjs']
         },
         rollupOptions: {
-            external: ['vue']
+            external: ['vue', 'vue-router']
         },
         minify: false
     }
