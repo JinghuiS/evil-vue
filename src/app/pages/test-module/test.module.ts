@@ -13,7 +13,7 @@ import TestBase from './test-base.vue'
             ]
         })
     ],
-    providers: [TestService],
+    providers: [],
     bootstrap: TestBase
 })
 export class TestViewModule {}

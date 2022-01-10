@@ -8,7 +8,7 @@ import { watch } from 'vue'
 export default class AppView extends VueComponent {
     constructor(@Inject(TestService) public testService: TestService) {
         super()
-        testService.test = 2
+        // testService.test = 2
         watch(
             () => this.a,
             (a) => {
@@ -23,7 +23,7 @@ export default class AppView extends VueComponent {
 
 <template>
     <img alt="Vue logo" src="@/assets/logo.png" />
-    <div v-test @click="a++">{{ a }}</div>
+    <div v-test @click="testService.test++">{{ testService.test }}</div>
     <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
     <router-view />
 </template>
