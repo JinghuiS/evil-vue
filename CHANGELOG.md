@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/JinghuiS/evil-vue/compare/v1.1.2...v1.2.0) (2022-01-10)
+
+
+### Features
+
+* **http:** add http ([70aaddc](https://github.com/JinghuiS/evil-vue/commit/70aaddcfa718109007ea504dfa5e3d925a1cd9e6))
+
 ## [1.1.2](https://github.com/JinghuiS/evil-vue/compare/v1.1.1...v1.1.2) (2022-01-05)
 
 
