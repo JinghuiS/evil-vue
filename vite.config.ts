@@ -20,7 +20,7 @@ export default defineConfig(({ command }) => ({
             formats: ['es', 'cjs']
         },
         rollupOptions: {
-            external: ['vue', 'vue-router']
+            external: ['vue', 'vue-router', 'axios']
         },
         minify: false
     }
