@@ -1,3 +1,11 @@
+## [1.2.2](https://github.com/JinghuiS/evil-vue/compare/v1.2.1...v1.2.2) (2022-01-11)
+
+
+### Bug Fixes
+
+* **class-component:** fix link computed no export ([04719c8](https://github.com/JinghuiS/evil-vue/commit/04719c8775757163f92b5c3d965e0598d14a2caf))
+* external injection-js ([f9177fe](https://github.com/JinghuiS/evil-vue/commit/f9177fe2597eb28ce275f94d0b4eaea88eadf4eb))
+
 ## [1.2.1](https://github.com/JinghuiS/evil-vue/compare/v1.2.0...v1.2.1) (2022-01-11)
 
 
