@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/JinghuiS/evil-vue/compare/v1.2.0...v1.2.1) (2022-01-11)
+
+
+### Bug Fixes
+
+* **http:** external axios fix http types ([8e04b4c](https://github.com/JinghuiS/evil-vue/commit/8e04b4c92d3496a760fbcd1bee023475cd5e3947))
+
 # [1.2.0](https://github.com/JinghuiS/evil-vue/compare/v1.1.2...v1.2.0) (2022-01-10)
 
 
