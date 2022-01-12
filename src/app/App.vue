@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Component, Viewer, VueComponent, Inject } from 'packages'
+import { Component, Viewer, VueComponent, Inject, Computed } from 'packages'
 import HelloWorld from './components/HelloWorld.vue'
 import { TestService } from './core/service/test.service'
 import { watch } from 'vue'
@@ -22,9 +22,11 @@ export default class AppView extends VueComponent {
 </script>
 
 <template>
+    {{ getA }}
     <img alt="Vue logo" src="@/assets/logo.png" />
-    <div v-test @click="testService.test++">{{ testService.test }}</div>
+    <div v-test @click="a++">{{ a }}</div>
     <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+
     <router-view />
 </template>
 

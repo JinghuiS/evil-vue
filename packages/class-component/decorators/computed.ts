@@ -19,25 +19,44 @@ export function Computed(): MethodDecorator {
     }
 }
 
-function handler(targetThis: Record<any, any>) {
+function handler(targetThis: Record<any, any>, setupReturn?: any) {
     const list: ComputedItem[] = getProtoMetadata(targetThis, MetadataKey, true)
     if (!list || !list.length) return
     for (const item of list) {
-        const desc = item.desc
-        const keyVal = computed({
-            get: () => desc.get?.call(targetThis),
-            set: (v: any) => desc.set?.call(targetThis, v)
-        })
-        Object.defineProperty(targetThis, item.key, {
-            enumerable: desc?.enumerable,
-            configurable: true,
-            get() {
-                return keyVal.value
-            },
-            set(v: any) {
-                keyVal.value = v
-            }
-        })
+        if (setupReturn) {
+            const desc = item.desc
+            setupReturn[item.key] = computed({
+                get: () => desc.get?.call(targetThis),
+                set: (v: any) => desc.set?.call(targetThis, v)
+            })
+            Object.defineProperty(targetThis, item.key, {
+                enumerable: desc?.enumerable,
+                configurable: true,
+                get() {
+                    return setupReturn[item.key]
+                },
+                set(v: any) {
+                    setupReturn[item.key].value = v
+                }
+            })
+            console.log(setupReturn, item)
+        } else {
+            const desc = item.desc
+            const keyVal = computed({
+                get: () => desc.get?.call(targetThis),
+                set: (v: any) => desc.set?.call(targetThis, v)
+            })
+            Object.defineProperty(targetThis, item.key, {
+                enumerable: desc?.enumerable,
+                configurable: true,
+                get() {
+                    return keyVal.value
+                },
+                set(v: any) {
+                    keyVal.value = v
+                }
+            })
+        }
     }
 }
 
