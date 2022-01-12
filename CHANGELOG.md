@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/JinghuiS/evil-vue/compare/v1.2.3...v1.2.4) (2022-01-12)
+
+
+### Bug Fixes
+
+* delete computed log ([fdedab9](https://github.com/JinghuiS/evil-vue/commit/fdedab9064aa6f1147d984975a6a7e0a28c45f4b))
+
 ## [1.2.3](https://github.com/JinghuiS/evil-vue/compare/v1.2.2...v1.2.3) (2022-01-12)
 
 
