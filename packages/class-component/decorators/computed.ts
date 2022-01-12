@@ -39,7 +39,6 @@ function handler(targetThis: Record<any, any>, setupReturn?: any) {
                     setupReturn[item.key].value = v
                 }
             })
-            console.log(setupReturn, item)
         } else {
             const desc = item.desc
             const keyVal = computed({
