@@ -1,3 +1,11 @@
+## [1.2.3](https://github.com/JinghuiS/evil-vue/compare/v1.2.2...v1.2.3) (2022-01-12)
+
+
+### Bug Fixes
+
+* **class-component:** fix computed loss of response ([5b42b95](https://github.com/JinghuiS/evil-vue/commit/5b42b9502e25ab9e464b20a72d4c0458a5c66d97))
+* **class-component:** fix sfc link loss of response ([327fdd0](https://github.com/JinghuiS/evil-vue/commit/327fdd0bf104deaae64abb8329e599223d7497b5))
+
 ## [1.2.2](https://github.com/JinghuiS/evil-vue/compare/v1.2.1...v1.2.2) (2022-01-11)
 
 
