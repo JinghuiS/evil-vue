@@ -1,4 +1,4 @@
-import { getCurrentInstance } from 'vue'
+import { getCurrentInstance, ref } from 'vue'
 import { DecoratorHanlder } from '../types'
 import { getProtoMetadata } from '../utils/helper'
 
@@ -14,18 +14,29 @@ export function Link(): PropertyDecorator {
     }
 }
 
-function handler(targetThis: Record<any, any>) {
+function handler(targetThis: Record<any, any>, setupReturn?: any) {
     const list: (string | symbol)[] = getProtoMetadata(targetThis, MetadataKey)
     if (!list || !list.length) return
     for (const item of list) {
-        const instance = getCurrentInstance()
-        Object.defineProperty(targetThis, item, {
-            enumerable: true,
-            configurable: true,
-            get() {
-                return instance?.refs[item as string]
-            }
-        })
+        if (setupReturn) {
+            setupReturn[item] = ref()
+            Object.defineProperty(targetThis, item, {
+                enumerable: true,
+                configurable: true,
+                get() {
+                    return setupReturn[item].value
+                }
+            })
+        } else {
+            const instance = getCurrentInstance()
+            Object.defineProperty(targetThis, item, {
+                enumerable: true,
+                configurable: true,
+                get() {
+                    return instance?.refs[item as string]
+                }
+            })
+        }
     }
 }
 
